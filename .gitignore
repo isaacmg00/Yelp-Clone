@@ -1,2 +1,5 @@
 # Ignore files related to API keys
 .env
+
+# ignore the file literally named foo[01].txt
+index.js

@@ -107,6 +107,7 @@ app.delete("/api/v1/restaurants/:id", async (req, res) => {
   }
 });
 
+//add a review on a restaurant
 app.post("/api/v1/restaurants/:id/addReview", async (req, res) => {
   try {
     const newReview = await db.query(
@@ -240,7 +241,7 @@ app.post("/api/v1/restaurants/is-verify", async (req, res) => {
   }
 });
 
-app.post("/api/v1/restaurants/home", async (req, res) => {
+app.get("/api/v1/restaurants/home", async (req, res) => {
   try {
     const user = await db.query(
       "SELECT user_name FROM users WHERE user_id = $1",

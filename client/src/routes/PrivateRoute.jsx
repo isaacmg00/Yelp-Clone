@@ -6,7 +6,7 @@ const PrivateRoute = () => {
   const { isAuthenticated, setIsAuthenticated } =
     useContext(RestaurantsContext);
 
-  setIsAuthenticated(false);
+  setIsAuthenticated(true);
 
   return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
 };

@@ -4,7 +4,7 @@ const LoginPage = ({ setAuth }) => {
   return (
     <Fragment>
       <h1>Login</h1>
-      <button onClick={() => console.log("Hello")}>Authenticate</button>
+      <button onClick={() => setAuth(true)}>Authenticate</button>
     </Fragment>
   );
 };

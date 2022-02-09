@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -12,6 +12,7 @@ import RestaurantDetailPage from "./routes/RestaurantDetailPage";
 import { RestaurantsContextProvider } from "./context/RestaurantsContext";
 import Login from "./routes/Login";
 import Register from "./routes/Register";
+import LoginPage from "./components/LoginPage";
 //import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   //connecting the urls to the corresponding react pages
@@ -19,17 +20,6 @@ const App = () => {
 
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean);
-  };
-
-  const printHello = (int) => {
-    console.log("hello");
-  };
-
-  const DoSomethingWrapper = ({ children }) => {
-    useEffect(() => {
-      console.log("HELLOOOOOO");
-    }, []);
-    return children;
   };
 
   return (
@@ -92,9 +82,7 @@ const App = () => {
               path="/login"
               element={
                 !isAuthenticated ? (
-                  <DoSomethingWrapper>
-                    <Login setAuth={setAuth} />
-                  </DoSomethingWrapper>
+                  <LoginPage setAuth={setAuth} />
                 ) : (
                   <Navigate to="/home" />
                 )

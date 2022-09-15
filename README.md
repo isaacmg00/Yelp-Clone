@@ -1,2 +1,2 @@
 # yelp-clone
-# Yelp-Clone
+Fullstack PERN application
